@@ -1,7 +1,19 @@
 import { View, StyleSheet } from "react-native";
-import styles from "./style/welcome";
+import styles from "./style";
+import Logo from "../../components/logo";
+import { useContext, useEffect } from "react";
+import { LoadingContext } from "../../../App";
 
-function WelcomeScreen({ children }) {
+function WelcomeScreen({ navigation }) {
+  const { loading, setLoading } = useContext(LoadingContext);
+  useEffect(() => {
+    setTimeout(() => {
+      if (loading) {
+        setLoading(false);
+        navigation.navigate("Login");
+      }
+    }, 3000);
+  }, []);
   return (
     <View
       style={{
@@ -10,7 +22,7 @@ function WelcomeScreen({ children }) {
         alignItems: "center",
       }}
     >
-      {children}
+      <Logo></Logo>
     </View>
   );
 }

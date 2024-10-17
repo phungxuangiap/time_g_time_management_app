@@ -3,7 +3,7 @@ import {
   AUTH_LOGGED_IN_STATE,
   AUTH_LOGIN,
   AUTH_NO_USER_STATE,
-} from "../../contains/AuthConstain";
+} from "../../contants/AuthConstant";
 
 const AuthStateSlice = createSlice({
   name: "auth",

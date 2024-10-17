@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
   Image,
   ImageBackground,
@@ -8,7 +8,6 @@ import {
   useColorScheme,
   View,
 } from "react-native";
-import WelcomeScreen from "./src/screens/WelcomeScreen/WelcomeScreen";
 import Logo from "./src/components/logo";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -17,10 +16,13 @@ import GlobalStateProvider from "./src/context/AuthContext";
 import { Provider, useSelector } from "react-redux";
 import AppContainer from "./src/screens/AppContainer/AppContainer";
 import store from "./src/redux/store";
+import { NavigationContainer } from "@react-navigation/native";
 
 SplashScreen.preventAutoHideAsync();
+export const LoadingContext = createContext(null);
 export default function App() {
   const [loading, setLoading] = useState(true);
+
   let [fontsLoaded] = useFonts({
     "LondrinaSketch-Regular": require("./src/assets/font/LondrinaSketchRegular.ttf"),
   });
@@ -36,16 +38,11 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
-
   return (
     <Provider store={store}>
-      <AppContainer>
-        {loading && (
-          <WelcomeScreen>
-            <Logo></Logo>
-          </WelcomeScreen>
-        )}
-      </AppContainer>
+      <LoadingContext.Provider value={{ loading, setLoading }}>
+        <AppContainer></AppContainer>
+      </LoadingContext.Provider>
     </Provider>
   );
 }
