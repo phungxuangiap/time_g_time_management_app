@@ -25,6 +25,9 @@ export default function App() {
 
   let [fontsLoaded] = useFonts({
     "LondrinaSketch-Regular": require("./src/assets/font/LondrinaSketchRegular.ttf"),
+    "Inter-Light": require("./src/assets/font/Inter_18pt-Light.ttf"),
+    "Inter-Medium": require("./src/assets/font/Inter_18pt-Medium.ttf"),
+    "Inter-Bold": require("./src/assets/font/Inter_18pt-SemiBold.ttf"),
   });
   useEffect(() => {
     const hideSplashScreen = async () => {

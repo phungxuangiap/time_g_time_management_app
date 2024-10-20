@@ -1,8 +1,15 @@
-import { Animated, Easing, Image, ImageBackground } from "react-native";
+import {
+  Animated,
+  Easing,
+  Image,
+  ImageBackground,
+  Touchable,
+  TouchableOpacity,
+} from "react-native";
 import componentStyles from "./style/componentStyles";
 import { useEffect, useRef } from "react";
 
-export default function Logo({ loading }) {
+export const Logo = function ({ loading }) {
   const logoPadding = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
@@ -33,4 +40,12 @@ export default function Logo({ loading }) {
       }}
     ></Animated.Image>
   );
-}
+};
+
+export const LogoSocial = function ({ socialDirection }) {
+  return (
+    <TouchableOpacity style={{ alignSelf: "baseline" }}>
+      <Image source={socialDirection} style={componentStyles.logoSocial} />
+    </TouchableOpacity>
+  );
+};

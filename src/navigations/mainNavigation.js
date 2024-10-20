@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 import { authSelector } from "../redux/selectors";
 import { createContext, useContext, useEffect, useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Button } from "react-native";
+import RegisterScreen from "../screens/RegisterScreen/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
 export const LoadingContext = createContext(null);
@@ -14,9 +16,20 @@ export default function MainNavigation() {
     <LoadingContext.Provider value={{ loading, setLoading }}>
       <NavigationContainer>
         <Stack.Navigator initialRouteName={loading ? "Welcome" : "Login"}>
-          <Stack.Screen name="Welcome" component={WelcomeScreen} />
-
-          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen
+            name="Welcome"
+            component={WelcomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </LoadingContext.Provider>
