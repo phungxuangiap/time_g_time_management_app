@@ -7,31 +7,30 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Button } from "react-native";
 import RegisterScreen from "../screens/RegisterScreen/RegisterScreen";
+import { LoadingContext } from "../context/AppContexts";
+import HomeScreen from "../screens/HomeScreen/HomeScreen";
 
 const Stack = createNativeStackNavigator();
-export const LoadingContext = createContext(null);
 export default function MainNavigation() {
-  const [loading, setLoading] = useState(true);
+  const { loading, setLoading } = useContext(LoadingContext);
   return (
-    <LoadingContext.Provider value={{ loading, setLoading }}>
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName={loading ? "Welcome" : "Login"}>
-          <Stack.Screen
-            name="Welcome"
-            component={WelcomeScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="Login"
-            component={LoginScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </LoadingContext.Provider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName={loading ? "Welcome" : "Login"}>
+        <Stack.Screen
+          name="Welcome"
+          component={WelcomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Login"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

@@ -1,6 +1,12 @@
 import { StyleSheet } from "react-native";
 
 export default componentStyles = StyleSheet.create({
+  entireScreenPadding: {
+    paddingTop: 46,
+    paddingStart: 12,
+    paddingBottom: 38,
+    paddingEnd: 12,
+  },
   logo: {
     flex: 1,
     width: 120,
@@ -41,5 +47,42 @@ export default componentStyles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 50,
+  },
+  ContainerRowCenter: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  ContainerColumn: {
+    flexDirection: "column",
+  },
+  ContainerColumnCenter: {
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  DayTitleText: {
+    fontFamily: "Inter-Bold",
+    fontSize: 52,
+    lineHeight: 58,
+    padding: 6,
+  },
+  TextRegular16: {
+    fontFamily: "Inter-Medium",
+    fontSize: 16,
+    lineHeight: 16,
+    padding: 4,
+  },
+  TextExtraLight14: {
+    fontFamily: "Inter-Light",
+    fontSize: 14,
+    lineHeight: 14,
+    padding: 4,
+    alignSelf: "center",
+  },
+  TextBold18: {
+    fontFamily: "Inter-Bold",
+    fontSize: 18,
+    lineHeight: 18,
+    padding: 4,
+    alignSelf: "center",
   },
 });

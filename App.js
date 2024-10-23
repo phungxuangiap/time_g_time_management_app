@@ -17,9 +17,10 @@ import { Provider, useSelector } from "react-redux";
 import AppContainer from "./src/screens/AppContainer/AppContainer";
 import store from "./src/redux/store";
 import { NavigationContainer } from "@react-navigation/native";
+import { LoadingContext } from "./src/context/AppContexts";
 
 SplashScreen.preventAutoHideAsync();
-export const LoadingContext = createContext(null);
+
 export default function App() {
   const [loading, setLoading] = useState(true);
 

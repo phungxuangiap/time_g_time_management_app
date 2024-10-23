@@ -19,16 +19,15 @@ export default function LoginScreen() {
       <Text style={LoginScreenStyle.bigTitleText}>Login</Text>
       <InputTag name={"User name"} />
       <InputTag name={"Password"} />
-      <InputTag name={"Email"} />
       <CommonButton title={"Login"} style={LoginScreenStyle.buttonDistance} />
       <Text style={LoginScreenStyle.textConcat}>Or</Text>
       <View style={LoginScreenStyle.container}>
         <LogoSocial
-          socialDirection={require("../../assets/image/facebook.png")}
+          socialDirection={require("../../assets/image/googleLogo.png")}
         />
         <SpacerHorizontal24 />
         <LogoSocial
-          socialDirection={require("../../assets/image/googleLogo.png")}
+          socialDirection={require("../../assets/image/facebook.png")}
         />
       </View>
       <View style={{ ...LoginScreenStyle.container, padding: 20 }}>

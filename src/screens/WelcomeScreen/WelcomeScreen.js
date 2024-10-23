@@ -2,7 +2,7 @@ import { View, StyleSheet } from "react-native";
 import styles from "./style";
 import { Logo } from "../../components/logo";
 import { useContext, useEffect } from "react";
-import { LoadingContext } from "../../../App";
+import { LoadingContext } from "../../context/AppContexts";
 
 function WelcomeScreen({ navigation }) {
   const { loading, setLoading } = useContext(LoadingContext);
