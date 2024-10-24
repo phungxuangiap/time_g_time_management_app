@@ -23,7 +23,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [loading, setLoading] = useState(true);
-
   let [fontsLoaded] = useFonts({
     "LondrinaSketch-Regular": require("./src/assets/font/LondrinaSketchRegular.ttf"),
     "Inter-Light": require("./src/assets/font/Inter_18pt-Light.ttf"),

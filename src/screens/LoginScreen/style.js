@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { GreenPrimaryColor } from "../../assets/color/appColor";
 
 export const LoginScreenStyle = StyleSheet.create({
   bigTitleText: { ...componentStyles.titleText, marginBottom: 64 },
@@ -12,7 +13,7 @@ export const LoginScreenStyle = StyleSheet.create({
   container: { alignSelf: "center", flexDirection: "row" },
   greenText: {
     ...componentStyles.text18,
-    color: "#6CDDAB",
+    color: GreenPrimaryColor,
     paddingLeft: 8,
   },
 });

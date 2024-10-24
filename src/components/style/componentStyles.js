@@ -1,4 +1,8 @@
 import { StyleSheet } from "react-native";
+import {
+  BlueGreenPrimaryColor,
+  GreenPrimaryColor,
+} from "../../assets/color/appColor";
 
 export default componentStyles = StyleSheet.create({
   entireScreenPadding: {
@@ -21,9 +25,9 @@ export default componentStyles = StyleSheet.create({
     marginBottom: 14,
     borderWidth: 2,
     borderRadius: 10,
-    borderColor: "#6CDDAB",
+    borderColor: GreenPrimaryColor,
     padding: 20,
-    color: "#273D4B",
+    color: BlueGreenPrimaryColor,
   },
   titleText: {
     fontSize: 28,
@@ -33,7 +37,7 @@ export default componentStyles = StyleSheet.create({
   commonButton: {
     height: 40,
     borderRadius: 20,
-    backgroundColor: "#6CDDAB",
+    backgroundColor: GreenPrimaryColor,
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
